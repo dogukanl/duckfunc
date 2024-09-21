@@ -1,0 +1,9 @@
+functions-framework==3.*
+duckdb>=1.0.0
+structlog>=24.4.0
+pydantic
+pyarrow
+pytest
+requests
+google-auth
+google-cloud-functions
