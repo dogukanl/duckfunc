@@ -1,5 +1,5 @@
 # Duckfunc
-duckfunc let's you run one-of duckdb queries using serverless functions.
+duckfunc let's you run duckdb queries using serverless functions.
 
 # Basic
 ```bash
@@ -73,7 +73,7 @@ gcloud iam service-accounts keys create "/tmp/$SERVICE_ACCOUNT.json" \
     --iam-account "$SERVICE_ACCOUNT_EMAIL"
 
 export GOOGLE_APPLICATION_CREDENTIALS="/tmp/$SERVICE_ACCOUNT.json"
-py examples/gcp.py
+PYTHONPATH=. py examples/gcp.py
 
 # ┌────────────┬───────────┬───────────────────────┬──────────────┐
 # │ LocationID │  Borough  │         Zone          │ service_zone │
