@@ -7,13 +7,22 @@ pip install -r requirements.txt
 functions-framework \
     --host localhost \
     --port 8080 \
-    --target quack \
-    --debug
+    --target quack
 
 PYTHONPATH=. py examples/basic.py
+
+# ┌────────────┬───────────┬───────────────────────┬──────────────┐
+# │ LocationID │  Borough  │         Zone          │ service_zone │
+# │   int64    │  varchar  │        varchar        │   varchar    │
+# ├────────────┼───────────┼───────────────────────┼──────────────┤
+# │        238 │ Manhattan │ Upper West Side North │ Yellow Zone  │
+# │        239 │ Manhattan │ Upper West Side South │ Yellow Zone  │
+# └────────────┴───────────┴───────────────────────┴──────────────┘
 ```
 
 # GCP
+
+## Setup
 
 ```bash
 export PROJECT="duckfunc-project"
@@ -73,9 +82,11 @@ py examples/gcp.py
 # │        238 │ Manhattan │ Upper West Side North │ Yellow Zone  │
 # │        239 │ Manhattan │ Upper West Side South │ Yellow Zone  │
 # └────────────┴───────────┴───────────────────────┴──────────────┘
+```
 
-# Teardown
+## Teardown
 
+```bash
 rm $GOOGLE_APPLICATION_CREDENTIALS
 
 gcloud functions delete $FUNCTION_NAME
